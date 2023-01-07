@@ -35,6 +35,9 @@ app.use("/api/v1", product);
 app.use("/api/v1", user);
 app.use("/api/v1", order);
 app.use("/api/v1", payment);
+app.use("/", (req, res) => {
+  res.send('Welcome to the home page')
+});
 
 // app.use(express.static(path.join(__dirname, "../frontend/build")));
 
