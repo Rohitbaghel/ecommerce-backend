@@ -19,8 +19,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload());
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: "*",
     credentials: true,
+    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
   })
 );
 
@@ -35,7 +36,7 @@ app.use("/api/v1", user);
 app.use("/api/v1", order);
 app.use("/api/v1", payment);
 app.use("/", (req, res) => {
-  res.send('Welcome to the home page')
+  res.send("Welcome to the home page");
 });
 
 // app.use(express.static(path.join(__dirname, "../frontend/build")));
