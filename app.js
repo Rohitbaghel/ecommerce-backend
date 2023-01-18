@@ -32,7 +32,12 @@ app.use(fileUpload());
 //   res.send();
 // });
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://ecommerce-web-9dya.vercel.app",
+    credentials: true,
+  })
+);
 
 // Route Imports
 const product = require("./routes/productRoute");
